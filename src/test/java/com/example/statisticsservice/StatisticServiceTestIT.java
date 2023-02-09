@@ -1,27 +1,22 @@
-package com.example.statisticsservice.controller;
+package com.example.statisticsservice;
 
 import com.example.statisticsservice.controller.dto.MessageDto;
 import com.example.statisticsservice.controller.dto.MessageType;
 import com.example.statisticsservice.controller.dto.ResultDto;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.statisticsservice.repository.TeamRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
-class StatisticControllerTest {
+class StatisticServiceTestIT extends BaseIntegrationTestIT {
 
     @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
+    private TeamRepository teamRepository;
 
     @Test
     void shouldReturnOkStatusWhenProperRequestIsMade() throws Exception {
@@ -33,5 +28,6 @@ class StatisticControllerTest {
                 .content(objectMapper.writeValueAsString(messageDto)));
 
         resultActions.andExpect(status().isOk());
+        Assertions.assertEquals(2, teamRepository.findAll().size());
     }
 }
