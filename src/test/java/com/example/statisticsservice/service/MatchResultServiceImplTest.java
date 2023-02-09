@@ -19,7 +19,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class MatchResultServiceTest {
+class MatchResultServiceImplTest {
 
     private static final Long WINNING_POINTS = 3L;
     private static final Long LOOSING_POINTS = 0L;
@@ -29,7 +29,7 @@ class MatchResultServiceTest {
     private TeamRepository teamRepository;
 
     @InjectMocks
-    private MatchResultService matchResultService;
+    private MatchResultServiceImpl matchResultService;
 
     @Test
     void shouldSaveWinningResultWhenHomeTeamWin() {

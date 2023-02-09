@@ -14,13 +14,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class StatisticServiceTest {
+class StatisticServiceImplTest {
     @InjectMocks
-    private StatisticService statisticService;
+    private StatisticServiceImpl statisticService;
     @Mock
-    private MatchResultService matchResultService;
+    private MatchResultServiceImpl matchResultService;
     @Mock
-    private MatchStatisticsService matchStatisticsService;
+    private MatchStatisticsServiceImpl matchStatisticsService;
 
     @Test
     void fetchStatistics_returnsCorrectStatistics() {

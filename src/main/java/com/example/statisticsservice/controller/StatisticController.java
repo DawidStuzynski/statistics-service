@@ -1,7 +1,7 @@
 package com.example.statisticsservice.controller;
 
 import com.example.statisticsservice.controller.dto.MessageDto;
-import com.example.statisticsservice.service.StatisticService;
+import com.example.statisticsservice.service.StatisticServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/statistics")
 public class StatisticController {
 
-    private final StatisticService statisticService;
+    private final StatisticServiceImpl statisticService;
 
     @PostMapping
     public ResponseEntity<String> fetchStatistics(@RequestBody MessageDto messageDto) {

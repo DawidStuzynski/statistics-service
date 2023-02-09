@@ -15,10 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class MatchStatisticsServiceTest {
+class MatchStatisticsServiceImplTest {
 
     @InjectMocks
-    private MatchStatisticsService matchStatisticsService;
+    private MatchStatisticsServiceImpl matchStatisticsService;
 
     @Mock
     private TeamRepository teamRepository;
