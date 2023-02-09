@@ -33,6 +33,8 @@ class MatchResultServiceTest {
 
     @Test
     void shouldSaveWinningResultWhenHomeTeamWin() {
+
+        //given
         ResultDto resultDto = new ResultDto("Home", "Away", 2L, 1L);
 
         Team homeTeam = Team.builder()
@@ -42,7 +44,6 @@ class MatchResultServiceTest {
                 .goalsScored(0L)
                 .goalsConceded(0L)
                 .build();
-        when(teamRepository.getByName("Home")).thenReturn(Optional.of(homeTeam));
 
         Team awayTeam = Team.builder()
                 .name("Away")
@@ -51,10 +52,14 @@ class MatchResultServiceTest {
                 .goalsScored(0L)
                 .goalsConceded(0L)
                 .build();
+
+        //when
+        when(teamRepository.getByName("Home")).thenReturn(Optional.of(homeTeam));
         when(teamRepository.getByName("Away")).thenReturn(Optional.of(awayTeam));
 
         matchResultService.saveMathResults(resultDto);
 
+        //then
         verify(teamRepository, times(2)).save(any(Team.class));
         verify(teamRepository, times(1)).getByName("Home");
         verify(teamRepository, times(1)).getByName("Away");
@@ -72,6 +77,8 @@ class MatchResultServiceTest {
 
     @Test
     void shouldSaveWinningResultWhenAwayTeamWin() {
+
+        //given
         ResultDto resultDto = new ResultDto("Home", "Away", 0L, 3L);
 
         Team homeTeam = Team.builder()
@@ -81,7 +88,7 @@ class MatchResultServiceTest {
                 .goalsScored(0L)
                 .goalsConceded(0L)
                 .build();
-        when(teamRepository.getByName("Home")).thenReturn(Optional.of(homeTeam));
+
 
         Team awayTeam = Team.builder()
                 .name("Away")
@@ -90,10 +97,14 @@ class MatchResultServiceTest {
                 .goalsScored(0L)
                 .goalsConceded(0L)
                 .build();
+
+        //when
+        when(teamRepository.getByName("Home")).thenReturn(Optional.of(homeTeam));
         when(teamRepository.getByName("Away")).thenReturn(Optional.of(awayTeam));
 
         matchResultService.saveMathResults(resultDto);
 
+        //then
         verify(teamRepository, times(2)).save(any(Team.class));
         verify(teamRepository, times(1)).getByName("Home");
         verify(teamRepository, times(1)).getByName("Away");
@@ -111,6 +122,8 @@ class MatchResultServiceTest {
 
     @Test
     void shouldSaveWinningResultWhenDrawOccur() {
+
+        //given
         ResultDto resultDto = new ResultDto("Home", "Away", 2L, 2L);
 
         Team homeTeam = Team.builder()
@@ -120,7 +133,6 @@ class MatchResultServiceTest {
                 .goalsScored(0L)
                 .goalsConceded(0L)
                 .build();
-        when(teamRepository.getByName("Home")).thenReturn(Optional.of(homeTeam));
 
         Team awayTeam = Team.builder()
                 .name("Away")
@@ -129,10 +141,14 @@ class MatchResultServiceTest {
                 .goalsScored(0L)
                 .goalsConceded(0L)
                 .build();
+
+        //when
+        when(teamRepository.getByName("Home")).thenReturn(Optional.of(homeTeam));
         when(teamRepository.getByName("Away")).thenReturn(Optional.of(awayTeam));
 
         matchResultService.saveMathResults(resultDto);
 
+        //then
         verify(teamRepository, times(2)).save(any(Team.class));
         verify(teamRepository, times(1)).getByName("Home");
         verify(teamRepository, times(1)).getByName("Away");
