@@ -12,7 +12,14 @@ public class ApiExceptionHandler {
     @ResponseBody
     @ExceptionHandler(NotSupportedTypeException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String notSupportedTypeExceptionHandler(NotSupportedTypeException exception) {
-        return exception.getMessage();
+    public String notSupportedTypeExceptionHandler(NotSupportedTypeException e) {
+        return e.getMessage();
+    }
+
+    @ResponseBody
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String resourceNotFoundException(ResourceNotFoundException e) {
+        return e.getMessage();
     }
 }

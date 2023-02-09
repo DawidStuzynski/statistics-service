@@ -1,5 +1,6 @@
 package com.example.statisticsservice.service;
 
+import com.example.statisticsservice.exception.ResourceNotFoundException;
 import com.example.statisticsservice.model.Team;
 import com.example.statisticsservice.repository.TeamRepository;
 import org.junit.jupiter.api.Test;
@@ -54,6 +55,6 @@ class MatchStatisticsServiceImplTest {
         when(teamRepository.getByName(teamName)).thenReturn(Optional.empty());
 
         //then
-        assertThrows(RuntimeException.class, () -> matchStatisticsService.getTeamStatistics(teamName));
+        assertThrows(ResourceNotFoundException.class, () -> matchStatisticsService.getTeamStatistics(teamName));
     }
 }
