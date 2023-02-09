@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: dstuzynski
+      changes:
+        - createTable:
+            tableName: team
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: played_events
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: gained_points
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: goals_scored
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: goals_conceded
+                  type: bigint
+                  constraints:
+                    nullable: false
