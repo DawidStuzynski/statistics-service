@@ -23,7 +23,7 @@ class StatisticServiceImplTest {
     private MatchStatisticsServiceImpl matchStatisticsService;
 
     @Test
-    void fetchStatistics_returnsCorrectStatistics() {
+    void shouldReturnJoinedStatisticsString() {
         //given
         ResultDto resultDto = new ResultDto("Barcelona", "Real Madrid", 2L, 1L);
         MessageDto messageDto = new MessageDto(MessageType.RESULT, resultDto);
