@@ -31,9 +31,9 @@ class StatisticServiceTest {
         when(matchStatisticsService.getTeamStatistics("Barcelona")).thenReturn(homeTeamStatistics);
         when(matchStatisticsService.getTeamStatistics("Real Madrid")).thenReturn(awayTeamStatistics);
 
-        //then
         String statistics = statisticService.fetchStatistics(resultDto);
 
+        //then
         assertEquals(homeTeamStatistics + "\n" + awayTeamStatistics, statistics);
         verify(matchResultService).saveMathResults(resultDto);
     }
