@@ -7,6 +7,7 @@ The statistics-service is a simple application whose purpose is to provide stati
 * JUnit 5
 * Mockito
 * Maven
+* Lombok
 * MySQL
 * Liquibase
 * Docker
