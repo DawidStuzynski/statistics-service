@@ -4,6 +4,7 @@ The statistics-service is a simple application whose purpose is to provide stati
 ## Technologies used
 * Java 17
 * Spring Boot 3
+* Hibernate
 * JUnit 5
 * Mockito
 * Maven
