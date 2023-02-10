@@ -19,7 +19,7 @@ The statistics-service is a simple application whose purpose is to provide stati
 
 
 ## Running the Project
-1. Clone this repository to your local machine using git `clone https://github.com/DawidStuzynski/statistics-service.git`
+1. Clone this repository to your local machine using `git clone https://github.com/DawidStuzynski/statistics-service.git`
 2. Navigate to the project directory using `cd statistics-service`
 3. Run the following command to start the project: `docker compose up`
 
