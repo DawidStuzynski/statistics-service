@@ -5,6 +5,7 @@ import com.example.statisticsservice.controller.dto.MessageType;
 import com.example.statisticsservice.controller.dto.ResultDto;
 import com.example.statisticsservice.repository.TeamRepository;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -17,6 +18,12 @@ class StatisticServiceTestIT extends BaseIntegrationTestIT {
 
     @Autowired
     private TeamRepository teamRepository;
+
+    @BeforeEach
+    public void cleanTable() {
+        teamRepository.deleteAll();
+    }
+
 
     @Test
     void shouldReturnOkStatusWhenProperRequestIsMade() throws Exception {
