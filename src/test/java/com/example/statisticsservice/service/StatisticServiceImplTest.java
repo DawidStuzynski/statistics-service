@@ -24,6 +24,7 @@ class StatisticServiceImplTest {
 
     @Test
     void shouldReturnJoinedStatisticsString() {
+
         //given
         ResultDto resultDto = new ResultDto("Barcelona", "Real Madrid", 2L, 1L);
         MessageDto messageDto = new MessageDto(MessageType.RESULT, resultDto);
