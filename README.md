@@ -1,4 +1,6 @@
 # statistics-service
+It was my recrutainment task
+
 The statistics-service is a simple application whose purpose is to provide statistics of football teams based on information about them supplied
 
 ## Technologies used
